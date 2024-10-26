@@ -1,17 +1,11 @@
 <script setup lang="ts">
 import HeaderSection from './components/headerSection/HeaderSection.vue'
 import SliderSection from './components/sliderSection/SliderSection.vue'
+import FooterSection from './components/FooterSection.vue'
 </script>
 
 <template>
-	<!-- <div class="header-section"> -->
 	<HeaderSection />
-	<!-- </div> -->
 	<SliderSection />
+	<FooterSection />
 </template>
-
-<style scoped>
-/* .header-section {
-
-} */
-</style>

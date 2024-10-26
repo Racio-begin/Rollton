@@ -1,6 +1,19 @@
 :root {
+	--white: #fff;
 	--red-main: #df231d;
 	// --red-optional:
 	--yellow: #fbd927;
 	--green-light: #57a03c;
+	--beige-optional: #ca9161;
+}
+
+// #app {
+// }
+
+body {
+	max-width: 1920px;
+	margin: 0 auto;
+	font-weight: normal;
+	font-family: 'Montserrat', sans-serif;
+	background-color: var(--white);
 }
