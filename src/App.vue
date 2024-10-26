@@ -1,7 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeaderSection from './components/headerSection/HeaderSection.vue'
+import SliderSection from './components/sliderSection/SliderSection.vue'
+</script>
 
 <template>
-	<h1>Hello World</h1>
+	<!-- <div class="header-section"> -->
+	<HeaderSection />
+	<!-- </div> -->
+	<SliderSection />
 </template>
 
-<style scoped></style>
+<style scoped>
+/* .header-section {
+
+} */
+</style>
