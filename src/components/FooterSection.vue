@@ -12,7 +12,6 @@
 <style lang="scss" scoped>
 .footer {
 	width: 100%;
-	// height: 60px;
 
 	&__container {
 		height: 21px;
@@ -33,7 +32,8 @@
 		font-size: 16px;
 		font-weight: 400;
 		display: flex;
-		// align-items: center;
+		align-items: baseline;
+		// justify-content: center;
 		color: var(--beige-optional);
 
 		& img {

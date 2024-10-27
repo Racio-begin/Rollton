@@ -8,7 +8,7 @@
 	// height: 560px;
 	aspect-ratio: 1260/560;
 	// height: 100%;
-	background: url('../../img/logo.png');
+	background: url('../../img/logo-header.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
