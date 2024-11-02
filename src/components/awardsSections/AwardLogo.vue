@@ -1,6 +1,8 @@
 <template>
 	<div class="award">
 		<img src="../../img/award.svg" alt="Награда за достижения" />
+		<span class="award__sunrise"></span>
+
 		<!-- <div class="award__logo">
 			<svg
 				width="570"
@@ -195,7 +197,26 @@
 	align-items: center;
 	position: relative;
 
-	// overflow: hidden;
+	& img {
+		z-index: 2;
+	}
+
+	&__sunrise {
+		width: 840px;
+		aspect-ratio: 1/1;
+		// height: 840px;
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: radial-gradient(
+			rgb(255, 255, 255, 1) 0%,
+			rgba(197, 170, 37, 0) 60%
+		);
+		z-index: 1;
+		// backdrop-filter: blur(200px);
+	}
 }
 
 // .award__logo {
@@ -237,30 +258,50 @@
 @media (max-width: 1280px) {
 	.award {
 		width: 480px;
+
+		&__sunrise {
+			width: 720px;
+		}
 	}
 }
 
 @media (max-width: 1024px) {
 	.award {
 		width: 400px;
+
+		&__sunrise {
+			width: 620px;
+		}
 	}
 }
 
 @media (max-width: 820px) {
 	.award {
 		width: 320px;
+
+		&__sunrise {
+			width: 470px;
+		}
 	}
 }
 
 @media (max-width: 768px) {
 	.award {
 		width: 300px;
+
+		&__sunrise {
+			width: 450px;
+		}
 	}
 }
 
 @media (max-width: 350px) {
 	.award {
 		width: 280px;
+
+		&__sunrise {
+			width: 400px;
+		}
 	}
 }
 </style>

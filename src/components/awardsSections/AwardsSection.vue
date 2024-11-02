@@ -24,6 +24,7 @@ import AwardLogo from './AwardLogo.vue'
 
 .awards {
 	background-color: var(--yellow);
+	overflow: hidden;
 
 	&__container {
 		width: 100%;
@@ -45,6 +46,9 @@ import AwardLogo from './AwardLogo.vue'
 			}
 		}
 	}
+
+	// &__logo-container {
+	// }
 }
 
 @media (max-width: 1920px) {
