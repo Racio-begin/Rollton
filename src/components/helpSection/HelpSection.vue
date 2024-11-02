@@ -33,12 +33,13 @@
 	&__container {
 		display: flex;
 		align-items: center;
-		padding: 66px 0;
+		padding: 66px 0 0;
 	}
 
 	&__heart-image {
 		width: 630px;
 		aspect-ratio: 630/560; // 1.125
+
 		margin: 66px 28px 0 0;
 		position: relative;
 		overflow: hidden;
@@ -65,14 +66,8 @@
 		margin-top: 90px;
 		flex: 1;
 
-		& h2 {
+		& h3 {
 			margin-bottom: 20px;
-		}
-
-		& p {
-			font-size: 29px;
-			line-height: 110%;
-			font-weight: 500;
 		}
 	}
 }
@@ -92,12 +87,10 @@
 @media (max-width: 1920px) {
 	.help {
 		&__container {
-			padding: functions.calcVH(66) 0;
+			padding: functions.calcVH(66) 0 0;
 		}
 
 		&__heart-image {
-			width: 580px;
-			aspect-ratio: 580/515;
 			margin: functions.calcVH(66) functions.calcVW(28) 0 0;
 		}
 
@@ -108,6 +101,37 @@
 				margin-bottom: functions.calcVH(20);
 			}
 		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.help {
+		&__heart-image {
+			width: 580px;
+			// aspect-ratio: 580/515;
+		}
+	}
+}
+
+@media (max-width: 1280px) {
+	.help {
+		&__container {
+			padding: functions.calcVH(30) 0 0;
+		}
+
+		&__heart-image {
+			width: 480px;
+			// aspect-ratio: 540/480;
+			margin: functions.calcVH(66) functions.calcVW(28) 0 0;
+		}
+
+		// &__content {
+		// 	margin-top: functions.calcVH(90);
+
+		// 	& h2 {
+		// 		margin-bottom: functions.calcVH(20);
+		// 	}
+		// }
 	}
 }
 </style>
