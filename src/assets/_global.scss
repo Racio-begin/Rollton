@@ -1,3 +1,6 @@
+@use './mixins.scss';
+@use './_functions.scss';
+
 :root {
 	--white: #fff;
 	--red-main: #df231d;
@@ -5,6 +8,8 @@
 	--yellow: #fbd927;
 	--green-light: #57a03c;
 	--beige-optional: #ca9161;
+	--light-optional: #fffbde;
+	--black: #000;
 }
 
 // #app {
@@ -16,4 +21,51 @@ body {
 	font-weight: normal;
 	font-family: 'Montserrat', sans-serif;
 	background-color: var(--white);
+}
+
+.container {
+	max-width: 1920px;
+	margin: 0 auto;
+	padding: 0 293px;
+}
+
+.title-red {
+	font-size: 50px;
+	line-height: 110%;
+	font-weight: 700;
+	color: var(--red-main);
+	text-transform: uppercase;
+}
+
+.title-green {
+	font-size: 80px;
+	line-height: 110%;
+	font-weight: 700;
+	color: var(--green-light);
+	text-transform: uppercase;
+}
+
+.subtitle {
+	font-size: 29px;
+	line-height: 110%;
+	font-weight: 500;
+	color: var(--black);
+}
+
+@media (max-width: 1920px) {
+	.container {
+		padding: 0 calcVW(293);
+	}
+}
+
+@media (max-width: 1440px) {
+	.container {
+		padding: 0 calcVW(240px);
+	}
+}
+
+@media (max-width: 1280px) {
+	.container {
+		padding: 0 calcVW(200px);
+	}
 }

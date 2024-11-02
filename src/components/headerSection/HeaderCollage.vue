@@ -35,10 +35,10 @@ const collageImage = computed(() => (hover.value ? hoverImage : originalImage))
 		}
 	}
 
-	&:hover {
-		& img {
-			// opacity: 0;
-		}
-	}
+	// &:hover {
+	// 	& img {
+	// opacity: 0;
+	// 	}
+	// }
 }
 </style>
