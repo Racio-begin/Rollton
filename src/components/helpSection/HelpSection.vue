@@ -1,5 +1,5 @@
 <template>
-	<section class="help">
+	<section class="help section-m">
 		<div class="container">
 			<div class="help__container">
 				<div class="help__heart-image">
@@ -24,19 +24,21 @@
 </template>
 
 <style lang="scss" scoped>
+@use '../../assets/_mixins.scss' as mixins;
+@use '../../assets/_functions.scss' as functions;
+
 .help {
-	width: 100%;
-	height: 800px;
 	background-color: var(--light-optional);
 
 	&__container {
 		display: flex;
+		align-items: center;
 		padding: 66px 0;
 	}
 
 	&__heart-image {
-		width: 628px;
-		height: 560px;
+		width: 630px;
+		aspect-ratio: 630/560; // 1.125
 		margin: 66px 28px 0 0;
 		position: relative;
 		overflow: hidden;
@@ -60,7 +62,7 @@
 	}
 
 	&__content {
-		margin-top: 232px;
+		margin-top: 90px;
 		flex: 1;
 
 		& h2 {
@@ -90,18 +92,20 @@
 @media (max-width: 1920px) {
 	.help {
 		&__container {
-			padding: caclVH(66) 0;
+			padding: functions.calcVH(66) 0;
 		}
 
 		&__heart-image {
-			margin: calcVH(66) calcVW(28) 0 0;
+			width: 580px;
+			aspect-ratio: 580/515;
+			margin: functions.calcVH(66) functions.calcVW(28) 0 0;
 		}
 
 		&__content {
-			margin-top: calcVH(232);
+			margin-top: functions.calcVH(90);
 
 			& h2 {
-				margin-bottom: calcVH(20);
+				margin-bottom: functions.calcVH(20);
 			}
 		}
 	}

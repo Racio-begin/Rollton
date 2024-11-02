@@ -6,7 +6,7 @@ import HeaderCollage from './HeaderCollage.vue'
 </script>
 
 <template>
-	<header class="header">
+	<header class="header section-l">
 		<div class="header__container">
 			<div class="header__logo-container">
 				<HeaderLogo />
@@ -23,10 +23,7 @@ import HeaderCollage from './HeaderCollage.vue'
 
 <style lang="scss" scoped>
 .header {
-	width: 100%;
-	height: 1000px;
 	position: relative;
-	// z-index: -1;
 	overflow: hidden;
 
 	&__container {
@@ -36,9 +33,6 @@ import HeaderCollage from './HeaderCollage.vue'
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
-
-		// position: relative;
-		// position: absolute;
 	}
 
 	&__logo-container {

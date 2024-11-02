@@ -1,5 +1,5 @@
 <template>
-	<section class="moments">
+	<section class="moments section-l">
 		<div class="container">
 			<div class="moments__container">
 				<div class="moments__content">
@@ -29,8 +29,6 @@
 @use '../../assets/_functions.scss';
 
 .moments {
-	width: 100%;
-	height: 1000px;
 	background-color: var(--yellow);
 	text-align: left;
 	overflow: hidden;

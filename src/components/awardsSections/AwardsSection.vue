@@ -3,7 +3,7 @@ import AwardLogo from './AwardLogo.vue'
 </script>
 
 <template>
-	<section class="awards">
+	<section class="awards section-m">
 		<div class="container">
 			<div class="awards__container">
 				<div class="awards__content">
@@ -17,9 +17,10 @@ import AwardLogo from './AwardLogo.vue'
 </template>
 
 <style lang="scss" scoped>
+@use '../../assets/_mixins.scss' as mixins;
+@use '../../assets/_functions.scss' as functions;
+
 .awards {
-	width: 100%;
-	height: 800px;
 	background-color: var(--yellow);
 
 	&__container {
@@ -36,6 +37,23 @@ import AwardLogo from './AwardLogo.vue'
 			margin-bottom: 20px;
 			& span {
 				white-space: nowrap;
+			}
+		}
+	}
+}
+
+@media (max-width: 1920px) {
+	.awards {
+		&__container {
+			// padding-top: 35px;
+			padding-top: functions.calcVH(35);
+		}
+
+		&__content {
+			// max-width: 580px;
+			& h3 {
+				// margin-bottom: 20px;
+				margin-bottom: functions.calcVH(20);
 			}
 		}
 	}
