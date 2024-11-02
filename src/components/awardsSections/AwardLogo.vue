@@ -231,21 +231,36 @@
 @media (max-width: 1440px) {
 	.award {
 		width: 520px;
-		// aspect-ratio: 520/566;
 	}
 }
 
 @media (max-width: 1280px) {
 	.award {
 		width: 480px;
-		// aspect-ratio: 480/538;
 	}
 }
 
 @media (max-width: 1024px) {
 	.award {
 		width: 400px;
-		// aspect-ratio: 480/435;
+	}
+}
+
+@media (max-width: 820px) {
+	.award {
+		width: 320px;
+	}
+}
+
+@media (max-width: 768px) {
+	.award {
+		width: 300px;
+	}
+}
+
+@media (max-width: 350px) {
+	.award {
+		width: 280px;
 	}
 }
 </style>

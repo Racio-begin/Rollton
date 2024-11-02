@@ -10,9 +10,9 @@ import AwardLogo from './AwardLogo.vue'
 					<h3 class="title-green">Получили <span>20 наград</span></h3>
 					<p class="subtitle">в различных номинациях</p>
 				</div>
-				<!-- <div class="awards__logo-container"> -->
-				<AwardLogo />
-				<!-- </div> -->
+				<div class="awards__logo-container">
+					<AwardLogo />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -28,6 +28,7 @@ import AwardLogo from './AwardLogo.vue'
 	&__container {
 		width: 100%;
 		padding-top: 35px;
+		padding-bottom: 100px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -44,42 +45,46 @@ import AwardLogo from './AwardLogo.vue'
 			}
 		}
 	}
-
-	&__logo-container {
-		&::before {
-			position: absolute;
-			content: '';
-			left: 0;
-			top: 0;
-			width: 100px;
-			height: 20px;
-			background-color: red;
-		}
-	}
 }
 
 @media (max-width: 1920px) {
 	.awards {
 		&__container {
-			// padding-top: 35px;
 			padding-top: functions.calcVH(35);
+			padding-bottom: functions.calcVH(100);
 		}
 
 		&__content {
-			// max-width: 580px;
 			& h3 {
-				// margin-bottom: 20px;
 				margin-bottom: functions.calcVH(20);
 			}
 		}
 	}
 }
 
-// @media (max-width: 1366px) {
-// 	.awards {
-// 		&__container {
-// 			padding-top: 80px;
-// 		}
-// 	}
-// }
+@media (max-width: 1280px) {
+	.awards {
+		&__container {
+			padding-top: functions.calcVH(30);
+			padding-bottom: functions.calcVH(70);
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.awards {
+		&__container {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		&__content {
+			text-align: center;
+		}
+
+		&__logo-container {
+			margin-bottom: 30px;
+		}
+	}
+}
 </style>
