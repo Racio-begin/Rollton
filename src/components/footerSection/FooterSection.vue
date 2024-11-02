@@ -1,9 +1,24 @@
+<script lang="ts" setup>
+import links from '@/constants/links' // Импорт объектов ссылок из вашего файла
+import { LinkKeys } from '@/types/LinkKeys' // Импорт enum для получения key
+</script>
+
 <template>
 	<footer class="footer">
 		<div class="footer__container">
-			<div class="footer__copyright">© 2023, Mareven. Все права защищены</div>
+			<div class="footer__copyright">
+				<a :href="links[LinkKeys.Maveren]"
+					>© 2023, Mareven. Все права защищены</a
+				>
+			</div>
 			<div class="footer__logo">
-				Сделано в <img src="../img/logo-footer.svg" />
+				<a :href="links[LinkKeys.Intensa]"
+					>Сделано в
+					<img
+						src="../../img/logo-footer.svg"
+						target="_blank"
+						alt="Логотип компании Intensa"
+				/></a>
 			</div>
 		</div>
 	</footer>
@@ -30,14 +45,17 @@
 	&__logo {
 		font-size: 16px;
 		font-weight: 400;
-		display: flex;
-		align-items: flex-start;
 		color: var(--beige-optional);
 
-		& img {
-			width: 63px;
-			aspect-ratio: 63/15;
-			margin-left: 7px;
+		& a {
+			display: flex;
+			align-items: flex-start;
+
+			& img {
+				width: 63px;
+				aspect-ratio: 63/15;
+				margin-left: 7px;
+			}
 		}
 	}
 }
@@ -65,8 +83,10 @@
 		&__logo {
 			font-size: 12px;
 
-			& img {
-				width: 50px;
+			& a {
+				& img {
+					width: 50px;
+				}
 			}
 		}
 	}
@@ -85,8 +105,10 @@
 		}
 
 		&__logo {
-			& img {
-				margin-left: 5px;
+			& a {
+				& img {
+					margin-left: 5px;
+				}
 			}
 		}
 	}

@@ -4,7 +4,7 @@
 import MomentsSection from './components/momentsSection/MomentsSection.vue'
 import HelpSection from './components/helpSection/HelpSection.vue'
 // import AwardsSection from './components/awardsSections/AwardsSection.vue'
-import FooterSection from './components/FooterSection.vue'
+import FooterSection from './components/footerSection/FooterSection.vue'
 </script>
 
 <template>
