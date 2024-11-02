@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AwardLogo from './AwardLogo.vue'
+import AwardImage from './AwardImage.vue'
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import AwardLogo from './AwardLogo.vue'
 					<p class="subtitle">в различных номинациях</p>
 				</div>
 				<div class="awards__logo-container">
-					<AwardLogo />
+					<AwardImage />
 				</div>
 			</div>
 		</div>
