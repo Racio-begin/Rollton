@@ -60,3 +60,21 @@
 		url('./Montserrat-Black.woff2') format('woff2'),
 		url('./Montserrat-Black.woff') format('woff');
 }
+
+@font-face {
+	font-family: 'PT Sans Narrow';
+	font-weight: 400;
+
+	src:
+		url('./PTSans-Narrow.woff2') format('woff2'),
+		url('./PTSans-Narrow.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'PT Sans Narrow';
+	font-weight: 700;
+
+	src:
+		url('./PTSans-NarrowBold.woff2') format('woff2'),
+		url('./PTSans-NarrowBold.woff') format('woff');
+}
