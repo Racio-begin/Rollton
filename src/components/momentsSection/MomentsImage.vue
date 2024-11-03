@@ -8,9 +8,7 @@ import MomentsStars from './MomentsStars.vue'
 			src="../../img/planet-with-shadow.svg"
 			alt="Планета, обёрнутая лапшой"
 		/>
-		<!-- <img src="../../img/planet.svg" alt="Планета, обёрнутая лапшой" /> -->
 		<span class="planet-image__sunrise"></span>
-		<!-- <span class="planet-image__red-circle"></span> -->
 		<MomentsStars />
 	</div>
 </template>
@@ -20,8 +18,6 @@ import MomentsStars from './MomentsStars.vue'
 @use '../../assets/_functions.scss' as functions;
 
 .planet-image {
-	// width: 100%;
-	// position: relative;
 	margin-top: 80px;
 	display: flex;
 	justify-content: flex-end;
@@ -42,58 +38,11 @@ import MomentsStars from './MomentsStars.vue'
 			rgba(197, 170, 37, 0) 60%
 		);
 		z-index: 5;
-
-		// backdrop-filter: blur(200px);
 	}
-
-	// &__red-circle {
-	// 	width: 600px;
-	// 	aspect-ratio: 1/1;
-	// 	position: absolute;
-	// 	top: 420px;
-	// 	right: 270px;
-	// 	border-radius: 50%;
-	// 	transform: translate(50%, -50%);
-	// 	background-color: var(--red-main);
-	// 	z-index: 9;
-	// }
-
-	// &__stars {
-	// 	width: 908px;
-	// 	height: 813px;
-	// 	position: absolute;
-	// 	top: 47%;
-	// 	left: 74%;
-	// 	transform: translate(-50%, -50%);
-	// 	z-index: 10;
-	// }
 }
 @media (max-width: 1920px) {
 	.planet-image {
 		margin-top: functions.calcVH(80);
-		// &__sunrise {
-		// 	width: 1000px;
-		// 	height: 1000px;
-
-		// 	top: -50px;
-		// 	left: 400px;
-		// }
-
-		// &__red-circle {
-		// width: 602px;
-		// height: 602px;
-
-		// top: 420px;
-		// right: 270px;
-		// }
-
-		// &__stars {
-		// width: 908px;
-		// height: 813px;
-
-		// top: 48%;
-		// left: 75%;
-		// }
 	}
 }
 
@@ -123,12 +72,6 @@ import MomentsStars from './MomentsStars.vue'
 	.planet-image {
 		width: 80%;
 		margin-top: functions.calcVH(40);
-		// &__sunrise {
-		// 	width: 600px;
-
-		// 	top: -90px;
-		// 	left: 160px;
-		// }
 
 		&__sunrise {
 			width: 600px;
@@ -141,12 +84,6 @@ import MomentsStars from './MomentsStars.vue'
 	.planet-image {
 		margin-top: 0;
 		margin-bottom: 30px;
-		// &__sunrise {
-		// 	width: 600px;
-
-		// 	top: -90px;
-		// 	left: 160px;
-		// }
 
 		&__sunrise {
 			width: 500px;
@@ -170,12 +107,8 @@ import MomentsStars from './MomentsStars.vue'
 
 @media (max-width: 375px) {
 	.planet-image {
-		// width: 100%;
-
 		&__sunrise {
 			width: 450px;
-			// top: -100px;
-			// left: -100px;
 		}
 	}
 }

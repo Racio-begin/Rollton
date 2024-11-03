@@ -13,6 +13,7 @@
 		"format": "prettier --write src/"
 	},
 	"dependencies": {
+		"@types/swiper": "^5.4.3",
 		"sass": "^1.80.3",
 		"swiper": "^11.1.14",
 		"vue": "^3.5.12"

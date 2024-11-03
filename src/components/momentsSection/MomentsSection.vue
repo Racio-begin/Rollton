@@ -116,19 +116,6 @@ import MomentsImage from './MomentsImage.vue'
 			display: block;
 			margin-bottom: 50px;
 		}
-
-		// h3 {
-		// 	max-width: 450px;
-		// 	margin-bottom: 20px;
-
-		// 	& span {
-		// 		white-space: nowrap;
-		// 	}
-		// }
-
-		// p {
-		// 	max-width: 380px;
-		// }
 	}
 }
 </style>

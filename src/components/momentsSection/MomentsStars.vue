@@ -1,5 +1,4 @@
 <template>
-	<!-- <img src="../../img/stars.svg" alt="Звезды вокруг планеты" class="stars" /> -->
 	<svg
 		class="stars"
 		width="909"
@@ -104,10 +103,8 @@
 
 <style lang="scss" scoped>
 .stars {
-	// width: 908px;
 	width: 100%;
 	aspect-ratio: 908/813;
-	// height: 813px;
 	position: absolute;
 	top: 47%;
 	left: 74%;
@@ -209,9 +206,7 @@
 
 @media (max-width: 375px) {
 	.stars {
-		// width: 120%;
 		top: 28%;
-		// left: 50%;
 	}
 }
 </style>
