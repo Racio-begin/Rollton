@@ -89,13 +89,15 @@ import image1 from '../../img/products/rollton-1.png'
 		<div class="slide__plug"></div>
 		<div class="slide__content">
 			<h3>1999</h3>
-
 			<p class="subtitle"><span> Первая пачка</span> вермишели</p>
 		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
+@use '../../assets/_functions.scss' as functions;
+@use '../../assets/_mixins.scss' as mixins;
+
 .slide {
 	cursor: pointer;
 	position: relative;
@@ -110,6 +112,14 @@ import image1 from '../../img/products/rollton-1.png'
 		top: -5%;
 	}
 
+	&__circle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 5;
+	}
+
 	&__shine {
 		width: 100%;
 		height: 100%;
@@ -117,32 +127,6 @@ import image1 from '../../img/products/rollton-1.png'
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-	}
-
-	&__circle {
-		// width: 280px;
-		// aspect-ratio: 1/1;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		// border-radius: 50%;
-		// background-color: var(--red-main);
-		z-index: 5;
-	}
-
-	// #animatedRect {
-	// 	transition:
-	// 		transform 1s ease-in-out,
-	// 		fill 1s ease-in-out;
-	// }
-
-	// #gradientPath {
-	// 	transition: transform 1s ease-in-out;
-	// }
-
-	#animatedGroup {
-		transition: transform 0.8s ease-in-out;
 	}
 
 	&__plug {
@@ -181,20 +165,127 @@ import image1 from '../../img/products/rollton-1.png'
 		filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.3));
 	}
 
+	#animatedGroup {
+		transition: transform 0.8s ease-in-out;
+	}
+
 	&:hover .slide__image {
 		transform: scale(1.05) rotate(8deg);
 	}
 
-	// &:hover #animatedRect {
-	// 	transform: translate(-50px, -50px);
-	// }
-
-	// &:hover #gradientPath {
-	// 	transform: translate(-50px, -50px);
-	// }
-
 	&:hover #animatedGroup {
 		transform: translate(-50px, -72px);
+	}
+}
+
+@media (max-width: 1920px) {
+	.slide {
+		&__circle-container {
+			margin-top: functions.calcVH(90);
+		}
+
+		&__circle {
+			width: 240px;
+			aspect-ratio: 1/1;
+		}
+
+		&__plug {
+			height: 360px;
+		}
+
+		&__content {
+			margin-left: functions.calcVW(175);
+
+			& h3 {
+				@include mixins.adaptive-font(120, 60);
+			}
+		}
+
+		&__image {
+			width: 250px;
+		}
+	}
+}
+
+@media (max-width: 1024px) and (min-height: 1024px) {
+	.slide {
+		&__circle-container {
+			margin-top: functions.calcVH(50);
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.slide {
+		&__circle-container {
+			width: 300px;
+		}
+
+		&__circle {
+			width: 200px;
+		}
+
+		&__plug {
+			height: 300px;
+		}
+
+		&__image {
+			width: 200px;
+		}
+	}
+}
+
+@media (max-width: 820px) {
+	.slide {
+		&__circle-container {
+			width: 250px;
+		}
+
+		&__circle {
+			width: 180px;
+		}
+
+		&__plug {
+			height: 250px;
+		}
+
+		&__image {
+			width: 180px;
+		}
+
+		&:hover {
+			&__image {
+				transform: none;
+			}
+
+			#animatedGroup {
+				transform: none;
+			}
+
+			& .slide__image {
+				transform: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.slide {
+		&__circle-container {
+			width: 200px;
+		}
+
+		&__circle {
+			width: 150px;
+		}
+
+		&__plug {
+			height: 210px;
+		}
+
+		&__image {
+			width: 150px;
+		}
 	}
 }
 </style>

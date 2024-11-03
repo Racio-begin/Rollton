@@ -5,8 +5,8 @@
 		</div>
 		<div class="slider__container">
 			<swiper
-				:slides-per-view="3"
-				:space-between="50"
+				:slides-per-view="3.4"
+				:space-between="20"
 				@swiper="onSwiper"
 				@slideChange="onSlideChange"
 			>
@@ -44,7 +44,7 @@ const onSlideChange = () => {
 
 .slider {
 	background-color: var(--light-optional);
-	height: 1000px;
+	// height: 1000px;
 	padding: 150px 0 123px;
 
 	&__title {
@@ -68,7 +68,7 @@ const onSlideChange = () => {
 		position: relative;
 
 		&:nth-child(1) {
-			margin-left: 100px;
+			margin-left: 70px;
 		}
 
 		&::before {
@@ -112,6 +112,49 @@ const onSlideChange = () => {
 
 @media (max-width: 1920px) {
 	.slider {
+		height: auto;
+		padding: functions.calcVH(150) 0 functions.calcVH(123);
+
+		&__title {
+			margin-bottom: functions.calcVH(85);
+		}
+
+		// &__container {
+		// 	margin-left: 100px;
+		// }
+	}
+
+	.swiper {
+		.swiper-slide {
+			&:nth-child(1) {
+				// margin-left: 70px;
+				margin-left: functions.calcVW(70);
+			}
+		}
+	}
+}
+
+@media (max-width: 1280px) {
+	.swiper {
+		width: 100%;
+		height: 100%;
+
+		.swiper-slide {
+			&:nth-child(1)::before,
+			&:nth-child(2)::before,
+			&:nth-child(3)::before,
+			&:nth-child(4)::before,
+			&:nth-child(5)::before {
+				width: 250px;
+				background-size: contain;
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) and (min-height: 1024px) {
+	.slider {
+		padding: functions.calcVH(100) 0 functions.calcVH(80);
 	}
 }
 </style>
