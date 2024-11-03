@@ -288,4 +288,85 @@ import image1 from '../../img/products/rollton-1.png'
 		}
 	}
 }
+
+@media (max-width: 480px) {
+	.slide {
+		&__circle-container {
+			width: 150px;
+		}
+
+		&__circle {
+			width: 120px;
+		}
+
+		&__plug {
+			height: 210px;
+		}
+
+		&__image {
+			top: 10%;
+			width: 120px;
+		}
+
+		&__content {
+			// margin-left: 100px;
+
+			& h3 {
+				font-size: 45px;
+			}
+		}
+	}
+}
+
+@media (max-width: 390px) {
+	.slide {
+		&__circle-container {
+			width: 130px;
+		}
+
+		&__circle {
+			width: 100px;
+		}
+
+		&__plug {
+			height: 170px;
+		}
+
+		&__image {
+			width: 100px;
+		}
+
+		&__content {
+			& h3 {
+				font-size: 38px;
+			}
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.slide {
+		&__circle-container {
+			width: 130px;
+		}
+
+		&__circle {
+			width: 100px;
+		}
+
+		&__plug {
+			height: 150px;
+		}
+
+		&__image {
+			width: 95px;
+		}
+
+		&__content {
+			& h3 {
+				font-size: 38px;
+			}
+		}
+	}
+}
 </style>

@@ -5,10 +5,11 @@
 		</div>
 		<div class="slider__container">
 			<swiper
-				:slides-per-view="3.4"
+				:slides-per-view="slidesPerView"
 				:space-between="20"
 				@swiper="onSwiper"
 				@slideChange="onSlideChange"
+				:breakpoints="breakpoints"
 			>
 				<swiper-slide><SlideSection /></swiper-slide>
 				<swiper-slide><SlideSection /></swiper-slide>
@@ -16,23 +17,45 @@
 				<swiper-slide><SlideSection /></swiper-slide>
 				<swiper-slide><SlideSection /></swiper-slide>
 				<swiper-slide><SlideSection /></swiper-slide>
-
-				...
+				<!-- Другие слайды -->
 			</swiper>
 		</div>
 	</section>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { Swiper as SwiperInstance } from 'swiper'
 import 'swiper/css'
 
 import SlideSection from './SlideSection.vue'
 
+// Определяем объем по умолчанию для слайдов
+const slidesPerView = ref(3.4)
+
+// Определяем точки перелома
+const breakpoints = {
+	0: {
+		slidesPerView: 1.8,
+		spaceBetween: 10,
+	},
+	350: {
+		slidesPerView: 2.5,
+		spaceBetween: 10,
+	},
+	500: {
+		slidesPerView: 3.4,
+		spaceBetween: 20,
+	},
+}
+
+// Обработчик события swiper
 const onSwiper = (swiper: SwiperInstance) => {
 	console.log(swiper)
 }
+
+// Обработчик изменения слайда
 const onSlideChange = () => {
 	console.log('slide change')
 }
@@ -155,6 +178,64 @@ const onSlideChange = () => {
 @media (max-width: 1024px) and (min-height: 1024px) {
 	.slider {
 		padding: functions.calcVH(100) 0 functions.calcVH(80);
+	}
+}
+
+@media (max-width: 1024px) {
+	.swiper {
+		.swiper-slide {
+			&:nth-child(1) {
+				// margin-left: 70px;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.slider {
+		padding: functions.calcVH(80) 0 functions.calcVH(60);
+	}
+
+	.swiper {
+		.swiper-slide {
+			&:nth-child(1)::before,
+			&:nth-child(2)::before,
+			&:nth-child(3)::before,
+			&:nth-child(4)::before,
+			&:nth-child(5)::before {
+				width: 150px;
+			}
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.swiper {
+		.swiper-slide {
+			&::before {
+				// content: '';
+				// position: absolute;
+				top: 36%;
+				left: 50%;
+				// width: 100%;
+				// height: 100%;
+				// background-repeat: no-repeat;
+			}
+
+			&:nth-child(1)::before,
+			&:nth-child(2)::before,
+			&:nth-child(3)::before,
+			&:nth-child(4)::before,
+			&:nth-child(5)::before {
+				width: 150px;
+			}
+
+			&:nth-child(1) {
+				// margin-left: 70px;
+				margin-left: 10px;
+			}
+		}
 	}
 }
 </style>
