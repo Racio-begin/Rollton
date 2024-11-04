@@ -270,18 +270,66 @@ const handleOverlayClick = (event: MouseEvent) => {
 }
 
 @media (max-width: 1280px) {
+	// .popup {
+	// 	&__container {
+	// 		padding: 60px 0 0 70px;
+	// 	}
+
+	// 	&__image-container {
+	// 		&_rollton {
+	// 			max-width: 300px;
+	// 		}
+
+	// 		&_tomato {
+	// 			right: 8%;
+	// 			bottom: 15%;
+	// 		}
+	// 	}
+
+	// 	&__text-container {
+	// 		max-width: 350px;
+	// 	}
+
+	// 	&__close-button {
+	// 		top: 30px;
+	// 		right: 30px;
+
+	// 		svg {
+	// 			width: 40px;
+	// 			height: 40px;
+	// 		}
+	// 	}
+	// }
+}
+
+@media (max-width: 1024px) {
 	.popup {
-		&__container {
-			padding: 60px 0 0 70px;
+		// &__container {
+		// 	height: calc(100% - 600px);
+		// }
+
+		&__subtitle {
+			max-width: 200px;
+		}
+
+		&__title-container {
+			& img {
+				width: 80px;
+			}
 		}
 
 		&__image-container {
 			&_rollton {
-				max-width: 300px;
+				max-width: 280px;
+			}
+
+			&_green {
+				width: 95px;
 			}
 
 			&_tomato {
-				right: 8%;
+				width: 90px;
+				right: 7%;
 				bottom: 15%;
 			}
 		}
@@ -290,15 +338,15 @@ const handleOverlayClick = (event: MouseEvent) => {
 			max-width: 350px;
 		}
 
-		&__close-button {
-			top: 30px;
-			right: 30px;
+		// &__close-button {
+		// 	top: 30px;
+		// 	right: 30px;
 
-			svg {
-				width: 40px;
-				height: 40px;
-			}
-		}
+		// 	svg {
+		// 		width: 40px;
+		// 		height: 40px;
+		// 	}
+		// }
 	}
 }
 
@@ -388,6 +436,167 @@ const handleOverlayClick = (event: MouseEvent) => {
 	.popup {
 		&__container {
 			height: calc(100% - 300px);
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.popup {
+		&__container {
+			width: calc(100% - 50px);
+			height: calc(100% - 50px);
+			border-radius: 20px;
+			padding: 60px 30px 0;
+		}
+
+		&__title-container {
+			& img {
+				width: 50px;
+			}
+		}
+
+		&__subtitle {
+			max-width: 150px;
+			font-size: 14px;
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 340px;
+			}
+
+			&_green {
+				width: 110px;
+			}
+
+			&_tomato {
+				width: 100px;
+				right: 7%;
+				bottom: 15%;
+			}
+		}
+
+		&__text-container {
+			max-width: 400px;
+			font-size: 16px;
+		}
+
+		&__close-button {
+			top: 20px;
+			right: 20px;
+
+			svg {
+				width: 35px;
+				height: 35px;
+			}
+		}
+	}
+}
+
+@media (max-width: 390px) {
+	.popup {
+		&__container {
+		}
+
+		&__title-container {
+			& img {
+				width: 50px;
+			}
+		}
+
+		&__subtitle {
+			max-width: 150px;
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 300px;
+			}
+
+			&_green {
+				width: 90px;
+			}
+
+			&_tomato {
+				width: 80px;
+				right: 7%;
+				bottom: 15%;
+			}
+		}
+
+		&__close-button {
+			top: 20px;
+			right: 20px;
+
+			svg {
+				width: 35px;
+				height: 35px;
+			}
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.popup {
+		&__title-container {
+			& img {
+				width: 50px;
+			}
+		}
+
+		&__subtitle {
+			max-width: 150px;
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 270px;
+			}
+
+			&_green {
+				width: 90px;
+			}
+
+			&_tomato {
+				width: 80px;
+				right: 7%;
+				bottom: 15%;
+			}
+		}
+
+		&__text-container {
+			font-size: 12px;
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.popup {
+		&__title-container {
+			& img {
+				width: 50px;
+			}
+		}
+
+		&__subtitle {
+			max-width: 150px;
+			font-size: 12px;
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 175px;
+			}
+
+			&_green {
+				width: 55px;
+			}
+
+			&_tomato {
+				width: 60px;
+				right: 5%;
+				bottom: 15%;
+			}
 		}
 	}
 }
