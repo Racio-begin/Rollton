@@ -37,6 +37,7 @@ const toggleImage = () => {
 
 	display: flex;
 	align-items: flex-end;
+	justify-content: center;
 
 	& img {
 		transition: all 0.3s ease-in-out;
@@ -48,6 +49,7 @@ const toggleImage = () => {
 
 		&.clicked {
 			&:hover {
+				cursor: default;
 				animation: none;
 			}
 		}
