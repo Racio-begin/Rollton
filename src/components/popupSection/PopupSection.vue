@@ -1,14 +1,30 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
+
 import arrowImage from '../../img/arrow.svg'
 import rolltonImage from '../../img/products/big-rollton-1.png'
 import greenImage from '../../img/decor-1.png'
 import tomatoImage from '../../img/decor-2.png'
+
+const isVisible = ref(true) // состояние видимости попапа
+
+const handleClosePopup = () => {
+	console.log('close popup')
+	isVisible.value = false
+}
+
+const handleOverlayClick = (event: MouseEvent) => {
+	const popupContainer = document.querySelector('.popup__container')
+	if (popupContainer && !popupContainer.contains(event.target as Node)) {
+		handleClosePopup()
+	}
+}
 </script>
 
 <template>
-	<div class="popup">
+	<div class="popup" v-show="isVisible" @click="handleOverlayClick">
 		<div class="popup__container">
-			<button class="popup__close-button">
+			<button class="popup__close-button" @click="handleClosePopup">
 				<svg
 					width="57"
 					height="57"
@@ -75,6 +91,9 @@ import tomatoImage from '../../img/decor-2.png'
 </template>
 
 <style lang="scss" scoped>
+@use '../../assets/_functions.scss' as functions;
+@use '../../assets/_mixins.scss' as mixins;
+
 .popup {
 	position: fixed;
 	top: 0;
@@ -125,9 +144,6 @@ import tomatoImage from '../../img/decor-2.png'
 		max-width: 300px;
 		font-size: 40px;
 		line-height: 110%;
-		letter-spacing: 80%;
-		// font-weight: 400;
-		// color: var(--green-light-2);
 	}
 
 	&__text-container {
@@ -157,16 +173,11 @@ import tomatoImage from '../../img/decor-2.png'
 		right: 0;
 		bottom: 0;
 
-		// & img {
-		// 	max-width: 600px;
-		// 	width: 100%;
-		// 	height: 100%;
-		// }
-
 		&_rollton {
 			max-width: 600px;
 			width: 100%;
-			height: 100%;
+			aspect-ratio: 1/1;
+			// height: 100%;
 		}
 
 		&_green {
@@ -201,9 +212,200 @@ import tomatoImage from '../../img/decor-2.png'
 	}
 }
 
-// .popup__image-container {
-// 	position: absolute;
-// 	right: 0;
-// 	bottom: 0;
-// }
+@media (max-width: 1920px) {
+	.popup {
+		// &__container {
+		// 	width: calc(100% - 400px);
+		// 	height: calc(100% - 200px);
+
+		// 	padding: 80px 0 0 100px;
+		// }
+
+		&__title-container {
+			margin-bottom: functions.calcVH(40);
+
+			& img {
+				margin-right: functions.calcVW(40);
+			}
+		}
+
+		&__title {
+			margin-right: functions.calcVW(28);
+			@include mixins.adaptive-font(100, 50);
+		}
+
+		&__subtitle {
+			@include mixins.adaptive-font(40, 20);
+		}
+
+		&__text-container {
+			// max-width: 600px;
+			margin-top: functions.calcVH(40);
+			// font-size: 30px;
+			@include mixins.adaptive-font(25, 12);
+
+			p:first-child {
+				margin-bottom: functions.calcVH(10);
+			}
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	.popup {
+		&__container {
+			width: calc(100% - 300px);
+			height: calc(100% - 200px);
+
+			padding: 80px 0 0 100px;
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 420px;
+			}
+
+			&_tomato {
+				right: 8%;
+				bottom: 15%;
+			}
+		}
+
+		&__text-container {
+			max-width: 460px;
+		}
+	}
+}
+
+@media (max-width: 1280px) {
+	.popup {
+		&__container {
+			// width: calc(100% - 300px);
+			// height: calc(100% - 200px);
+
+			padding: 60px 0 0 70px;
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 300px;
+			}
+
+			&_tomato {
+				right: 8%;
+				bottom: 15%;
+			}
+		}
+
+		&__text-container {
+			max-width: 350px;
+		}
+
+		&__close-button {
+			top: 30px;
+			right: 30px;
+
+			svg {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) and (min-height: 1024px) {
+	.popup {
+		&__container {
+			// width: calc(100% - 300px);
+			height: calc(100% - 600px);
+		}
+
+		&__subtitle {
+			max-width: 200px;
+		}
+
+		&__title-container {
+			// margin-bottom: 40px;
+			// display: flex;
+			// align-items: center;
+
+			& img {
+				// margin-right: 40px;
+				width: 80px;
+			}
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 340px;
+			}
+
+			&_green {
+				width: 110px;
+			}
+
+			&_tomato {
+				width: 100px;
+				right: 7%;
+				bottom: 15%;
+			}
+		}
+
+		&__text-container {
+			max-width: 350px;
+		}
+
+		&__close-button {
+			top: 30px;
+			right: 30px;
+
+			svg {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+}
+
+@media (max-width: 820px) {
+	.popup {
+		&__container {
+			width: calc(100% - 200px);
+			height: calc(100% - 400px);
+		}
+
+		&__subtitle {
+			max-width: 200px;
+		}
+
+		&__image-container {
+			&_rollton {
+				max-width: 340px;
+			}
+
+			&_green {
+				width: 110px;
+			}
+
+			&_tomato {
+				width: 100px;
+				right: 7%;
+				bottom: 15%;
+			}
+		}
+
+		&__text-container {
+			max-width: 400px;
+			font-size: 16px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.popup {
+		&__container {
+			height: calc(100% - 300px);
+		}
+	}
+}
 </style>
