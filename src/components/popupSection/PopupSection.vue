@@ -1,30 +1,25 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-
 import arrowImage from '../../img/arrow.svg'
 import rolltonImage from '../../img/products/big-rollton-1.png'
 import greenImage from '../../img/decor-1.png'
 import tomatoImage from '../../img/decor-2.png'
 
-const isVisible = ref(true) // состояние видимости попапа
-
-const handleClosePopup = () => {
-	console.log('close popup')
-	isVisible.value = false
-}
+const props = defineProps<{
+	togglePopup: () => void
+}>()
 
 const handleOverlayClick = (event: MouseEvent) => {
 	const popupContainer = document.querySelector('.popup__container')
 	if (popupContainer && !popupContainer.contains(event.target as Node)) {
-		handleClosePopup()
+		props.togglePopup()
 	}
 }
 </script>
 
 <template>
-	<div class="popup" v-show="isVisible" @click="handleOverlayClick">
+	<div class="popup" @click="handleOverlayClick">
 		<div class="popup__container">
-			<button class="popup__close-button" @click="handleClosePopup">
+			<button class="popup__close-button" @click="togglePopup">
 				<svg
 					width="57"
 					height="57"

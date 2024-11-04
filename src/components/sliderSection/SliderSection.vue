@@ -11,15 +11,20 @@
 				@slideChange="onSlideChange"
 				:breakpoints="breakpoints"
 			>
-				<swiper-slide><SlideSection /></swiper-slide>
-				<swiper-slide><SlideSection /></swiper-slide>
-				<swiper-slide><SlideSection /></swiper-slide>
-				<swiper-slide><SlideSection /></swiper-slide>
-				<swiper-slide><SlideSection /></swiper-slide>
-				<swiper-slide><SlideSection /></swiper-slide>
-				<!-- Другие слайды -->
+				<swiper-slide
+					v-for="slide in slides"
+					:key="slide.id"
+					@click="() => togglePopup()"
+					:togglePopup
+				>
+					<SlideSection />
+				</swiper-slide>
 			</swiper>
 		</div>
+		<PopupSection
+			v-if="popupTriggers.buttonTrigger"
+			:togglePopup="() => togglePopup()"
+		/>
 	</section>
 </template>
 
@@ -31,10 +36,21 @@ import 'swiper/css'
 
 import SlideSection from './SlideSection.vue'
 
-// Определяем объем по умолчанию для слайдов
+import PopupSection from '../popupSection/PopupSection.vue'
+
+//* СЛАЙДЕР *//
+
+const slides = [
+	{ id: 1 },
+	{ id: 2 },
+	{ id: 3 },
+	{ id: 4 },
+	{ id: 5 },
+	{ id: 6 },
+]
+
 const slidesPerView = ref(3.4)
 
-// Определяем точки перелома
 const breakpoints = {
 	0: {
 		slidesPerView: 1.8,
@@ -50,14 +66,19 @@ const breakpoints = {
 	},
 }
 
-// Обработчик события swiper
 const onSwiper = (swiper: SwiperInstance) => {
 	console.log(swiper)
 }
 
-// Обработчик изменения слайда
 const onSlideChange = () => {
 	console.log('slide change')
+}
+
+//* ПОПАП *//
+const popupTriggers = ref({ buttonTrigger: false })
+
+const togglePopup = () => {
+	popupTriggers.value.buttonTrigger = !popupTriggers.value.buttonTrigger
 }
 </script>
 
