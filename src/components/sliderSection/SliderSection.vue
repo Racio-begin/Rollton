@@ -24,6 +24,7 @@
 		<PopupSection
 			v-if="popupTriggers.buttonTrigger"
 			:togglePopup="() => togglePopup()"
+			:isVisible="isVisible"
 		/>
 	</section>
 </template>
@@ -76,9 +77,11 @@ const onSlideChange = () => {
 
 //* ПОПАП *//
 const popupTriggers = ref({ buttonTrigger: false })
+const isVisible = ref(false) // Флаг для управления видимостью попапа
 
 const togglePopup = () => {
 	popupTriggers.value.buttonTrigger = !popupTriggers.value.buttonTrigger
+	isVisible.value = !isVisible.value // Переключаем видимость
 }
 </script>
 

@@ -4,8 +4,11 @@ import rolltonImage from '../../img/products/big-rollton-1.png'
 import greenImage from '../../img/decor-1.png'
 import tomatoImage from '../../img/decor-2.png'
 
+import { defineProps } from 'vue'
+
 const props = defineProps<{
 	togglePopup: () => void
+	isVisible: boolean
 }>()
 
 const handleOverlayClick = (event: MouseEvent) => {
@@ -17,7 +20,7 @@ const handleOverlayClick = (event: MouseEvent) => {
 </script>
 
 <template>
-	<div class="popup" @click="handleOverlayClick">
+	<div class="popup" :class="{ active: isVisible }" @click="handleOverlayClick">
 		<div class="popup__container">
 			<button class="popup__close-button" @click="togglePopup">
 				<svg
@@ -102,20 +105,25 @@ const handleOverlayClick = (event: MouseEvent) => {
 	justify-content: center;
 	align-items: center;
 
+	opacity: 0;
+	transform: scale(0.95);
+	transition:
+		opacity 0.5s ease,
+		transform 0.5s ease;
+
+	&.active {
+		opacity: 1;
+		transform: scale(1);
+	}
+
 	&__container {
 		width: calc(100% - 600px);
-		// height: calc(100% - 310px);
 		height: calc(100% - 200px);
 		border-radius: 50px;
-		// padding: 80px 100px 0;
 		padding: 80px 0 0 100px;
 		background-color: var(--white);
 		position: relative;
 	}
-
-	// &__content {
-
-	// }
 
 	&__title-container {
 		margin-bottom: 40px;
@@ -145,7 +153,6 @@ const handleOverlayClick = (event: MouseEvent) => {
 		max-width: 600px;
 		margin-top: 40px;
 		font-family: 'PTSans-Narrow', sans-serif;
-		// font-size: 30px;
 		font-size: 25px;
 		font-weight: 400;
 		line-height: 110%;
@@ -172,7 +179,6 @@ const handleOverlayClick = (event: MouseEvent) => {
 			max-width: 600px;
 			width: 100%;
 			aspect-ratio: 1/1;
-			// height: 100%;
 		}
 
 		&_green {
@@ -209,13 +215,6 @@ const handleOverlayClick = (event: MouseEvent) => {
 
 @media (max-width: 1920px) {
 	.popup {
-		// &__container {
-		// 	width: calc(100% - 400px);
-		// 	height: calc(100% - 200px);
-
-		// 	padding: 80px 0 0 100px;
-		// }
-
 		&__title-container {
 			margin-bottom: functions.calcVH(40);
 
@@ -234,9 +233,7 @@ const handleOverlayClick = (event: MouseEvent) => {
 		}
 
 		&__text-container {
-			// max-width: 600px;
 			margin-top: functions.calcVH(40);
-			// font-size: 30px;
 			@include mixins.adaptive-font(25, 12);
 
 			p:first-child {
@@ -275,9 +272,6 @@ const handleOverlayClick = (event: MouseEvent) => {
 @media (max-width: 1280px) {
 	.popup {
 		&__container {
-			// width: calc(100% - 300px);
-			// height: calc(100% - 200px);
-
 			padding: 60px 0 0 70px;
 		}
 
@@ -311,7 +305,6 @@ const handleOverlayClick = (event: MouseEvent) => {
 @media (max-width: 1024px) and (min-height: 1024px) {
 	.popup {
 		&__container {
-			// width: calc(100% - 300px);
 			height: calc(100% - 600px);
 		}
 
@@ -320,12 +313,7 @@ const handleOverlayClick = (event: MouseEvent) => {
 		}
 
 		&__title-container {
-			// margin-bottom: 40px;
-			// display: flex;
-			// align-items: center;
-
 			& img {
-				// margin-right: 40px;
 				width: 80px;
 			}
 		}
