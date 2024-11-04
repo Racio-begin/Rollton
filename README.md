@@ -1,18 +1,9 @@
-# Rollton Project
+# Rollton Project ![Логотип компании Роллтон](https://github.com/Racio-begin/Rollton/blob/main/src/img/logo-header.png)
 
-This template should help get you started developing with Vue 3 in Vite.
+<img src="[http://url.to/image.png](https://github.com/Racio-begin/Rollton/blob/main/src/img/logo-header.png)" width="200" height="200">
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+The project was developed as part of a test assignment
 
 ## Project Setup
 
@@ -24,16 +15,4 @@ npm install
 
 ```sh
 npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
