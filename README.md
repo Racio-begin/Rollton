@@ -1,4 +1,3 @@
-# Rollton Project ![Логотип компании Роллтон](https://github.com/Racio-begin/Rollton/blob/main/src/img/logo.png)
 
 The project was developed as part of a test assignment
 
