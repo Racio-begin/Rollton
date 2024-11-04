@@ -1,6 +1,5 @@
 <script setup lang="ts">
-// import HeaderSection from './components/headerSection/HeaderSection.vue'
-// import PopupSection from './components/popupSection/PopupSection.vue'
+import HeaderSection from './components/headerSection/HeaderSection.vue'
 import SliderSection from './components/sliderSection/SliderSection.vue'
 // import MomentsSection from './components/momentsSection/MomentsSection.vue'
 // import HelpSection from './components/helpSection/HelpSection.vue'
@@ -9,9 +8,8 @@ import FooterSection from './components/footerSection/FooterSection.vue'
 </script>
 
 <template>
-	<!-- <HeaderSection /> -->
+	<HeaderSection />
 	<main>
-		<!-- <PopupSection /> -->
 		<SliderSection />
 		<!-- <MomentsSection /> -->
 		<!-- <HelpSection /> -->

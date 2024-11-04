@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import HeaderLogo from './HeaderLogo.vue'
 import HeaderCollage from './HeaderCollage.vue'
-
-// const collageImage = ref('../../img/collage.png')
 </script>
 
 <template>
@@ -23,6 +21,7 @@ import HeaderCollage from './HeaderCollage.vue'
 
 <style lang="scss" scoped>
 .header {
+	// min-height: 1000px;
 	position: relative;
 	overflow: hidden;
 
@@ -44,6 +43,7 @@ import HeaderCollage from './HeaderCollage.vue'
 
 	&__collage-container {
 		z-index: 1;
+		height: 1000px;
 	}
 
 	&__sunrise-container {

@@ -1,44 +1,64 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 
 // Импортируем изображения как модули
 import originalImage from '@/img/collage.png'
 import hoverImage from '@/img/collage-open.png'
 
-const hover = ref(false)
+// Состояния для отслеживания состояния клика
+const imageSwitched = ref(false)
 
-const collageImage = computed(() => (hover.value ? hoverImage : originalImage))
+// Функция для переключения изображения при клике
+const toggleImage = () => {
+	imageSwitched.value = true
+}
 </script>
 
 <template>
 	<div class="collage">
 		<img
-			:src="collageImage"
+			:src="imageSwitched ? hoverImage : originalImage"
+			:class="{ clicked: imageSwitched }"
 			alt="Изображение упаковки лапши быстрого приготовления"
-			@mouseover="hover = true"
-			@mouseleave="hover = false"
+			@click="toggleImage"
 		/>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 .collage {
-	cursor: pointer;
+	width: 100%;
+	height: 100%;
 	opacity: 1;
 
+	display: flex;
+	align-items: flex-end;
+
 	& img {
-		transform: scale(1);
 		transition: all 0.3s ease-in-out;
+		cursor: pointer;
 
 		&:hover {
-			transform: scale(1.05);
+			animation: shake 0.25s infinite;
+		}
+
+		&.clicked {
+			&:hover {
+				animation: none;
+			}
 		}
 	}
+}
 
-	// &:hover {
-	// 	& img {
-	// opacity: 0;
-	// 	}
-	// }
+@keyframes shake {
+	from {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(10px);
+	}
+	to {
+		transform: translateX(0);
+	}
 }
 </style>

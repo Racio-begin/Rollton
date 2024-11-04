@@ -40,7 +40,6 @@ import SlideSection from './SlideSection.vue'
 import PopupSection from '../popupSection/PopupSection.vue'
 
 //* СЛАЙДЕР *//
-
 const slides = [
 	{ id: 1 },
 	{ id: 2 },
@@ -77,11 +76,10 @@ const onSlideChange = () => {
 
 //* ПОПАП *//
 const popupTriggers = ref({ buttonTrigger: false })
-const isVisible = ref(false) // Флаг для управления видимостью попапа
-
+const isVisible = ref(false)
 const togglePopup = () => {
 	popupTriggers.value.buttonTrigger = !popupTriggers.value.buttonTrigger
-	isVisible.value = !isVisible.value // Переключаем видимость
+	isVisible.value = !isVisible.value
 }
 </script>
 
@@ -91,7 +89,6 @@ const togglePopup = () => {
 
 .slider {
 	background-color: var(--light-optional);
-	// height: 1000px;
 	padding: 150px 0 123px;
 
 	&__title {
@@ -101,10 +98,6 @@ const togglePopup = () => {
 			color: var(--yellow);
 		}
 	}
-
-	// &__container {
-	// 	margin-left: 100px;
-	// }
 }
 
 .swiper {
@@ -165,16 +158,11 @@ const togglePopup = () => {
 		&__title {
 			margin-bottom: functions.calcVH(85);
 		}
-
-		// &__container {
-		// 	margin-left: 100px;
-		// }
 	}
 
 	.swiper {
 		.swiper-slide {
 			&:nth-child(1) {
-				// margin-left: 70px;
 				margin-left: functions.calcVW(70);
 			}
 		}
@@ -209,7 +197,6 @@ const togglePopup = () => {
 	.swiper {
 		.swiper-slide {
 			&:nth-child(1) {
-				// margin-left: 70px;
 				margin-left: 0;
 			}
 		}
@@ -238,13 +225,8 @@ const togglePopup = () => {
 	.swiper {
 		.swiper-slide {
 			&::before {
-				// content: '';
-				// position: absolute;
 				top: 36%;
 				left: 50%;
-				// width: 100%;
-				// height: 100%;
-				// background-repeat: no-repeat;
 			}
 
 			&:nth-child(1)::before,
@@ -256,7 +238,6 @@ const togglePopup = () => {
 			}
 
 			&:nth-child(1) {
-				// margin-left: 70px;
 				margin-left: 10px;
 			}
 		}
