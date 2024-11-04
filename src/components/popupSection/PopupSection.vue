@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import arrowImage from '../../img/arrow.svg'
+import rolltonImage from '../../img/products/big-rollton-1.png'
+import greenImage from '../../img/decor-1.png'
+import tomatoImage from '../../img/decor-2.png'
 </script>
 
 <template>
@@ -33,6 +36,7 @@ import arrowImage from '../../img/arrow.svg'
 					<img :src="arrowImage" alt="Желтая стрелка, направленная вправо" />
 					<p class="popup__subtitle">Первая пачка вермишели</p>
 				</div>
+				<span class="popup__line"></span>
 				<div class="popup__text-container">
 					<p>
 						«Роллтон» – это любимые продукты миллионов потребителей. А всё
@@ -41,10 +45,30 @@ import arrowImage from '../../img/arrow.svg'
 					</p>
 					<p>
 						«Роллтон» объединяет всех, независимо от пола и возраста, и всегда
-						выручает горячим обедом! Где бы вас не настиг голод: на работе, в
-						поездке или дома, ваш сытный перекус — всегда под рукой.
+						выручает горячим обедом!
+					</p>
+					<p>
+						Где бы вас не настиг голод: на работе, в поездке или дома, ваш
+						сытный перекус — всегда под рукой.
 					</p>
 				</div>
+			</div>
+			<div class="popup__image-container">
+				<img
+					class="popup__image-container_rollton"
+					:src="rolltonImage"
+					alt="Упаковка лапши Роллтон с курицей"
+				/>
+				<img
+					class="popup__image-container_green"
+					:src="greenImage"
+					alt="Листики зелени"
+				/>
+				<img
+					class="popup__image-container_tomato"
+					:src="tomatoImage"
+					alt="Маленький томат"
+				/>
 			</div>
 		</div>
 	</div>
@@ -66,10 +90,12 @@ import arrowImage from '../../img/arrow.svg'
 
 	&__container {
 		width: calc(100% - 600px);
-		height: calc(100% - 310px);
+		// height: calc(100% - 310px);
+		height: calc(100% - 200px);
 		border-radius: 50px;
-		padding: 80px 100px 0;
-		background-color: var(--light-optional);
+		// padding: 80px 100px 0;
+		padding: 80px 0 0 100px;
+		background-color: var(--white);
 		position: relative;
 	}
 
@@ -78,7 +104,7 @@ import arrowImage from '../../img/arrow.svg'
 	// }
 
 	&__title-container {
-		margin-bottom: 94px;
+		margin-bottom: 40px;
 		display: flex;
 		align-items: center;
 
@@ -95,24 +121,64 @@ import arrowImage from '../../img/arrow.svg'
 	}
 
 	&__subtitle {
-		font-family: 'PTSans', sans-serif;
+		font-family: 'PTSans-Narrow', sans-serif;
 		max-width: 300px;
 		font-size: 40px;
 		line-height: 110%;
+		letter-spacing: 80%;
 		// font-weight: 400;
 		// color: var(--green-light-2);
 	}
 
 	&__text-container {
 		max-width: 600px;
-		font-family: 'PTSans', sans-serif;
-		font-size: 30px;
+		margin-top: 40px;
+		font-family: 'PTSans-Narrow', sans-serif;
+		// font-size: 30px;
+		font-size: 25px;
 		font-weight: 400;
 		line-height: 110%;
 		color: var(--gray);
 
 		p:first-child {
 			margin-bottom: 10px;
+		}
+	}
+
+	&__line {
+		display: block;
+		width: 100%;
+		height: 10px;
+		background-color: var(--light-optional);
+	}
+
+	&__image-container {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		// & img {
+		// 	max-width: 600px;
+		// 	width: 100%;
+		// 	height: 100%;
+		// }
+
+		&_rollton {
+			max-width: 600px;
+			width: 100%;
+			height: 100%;
+		}
+
+		&_green {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&_tomato {
+			position: absolute;
+			bottom: 20%;
+			right: 10%;
 		}
 	}
 
@@ -125,7 +191,7 @@ import arrowImage from '../../img/arrow.svg'
 		transition: transform 0.3s ease-in-out;
 
 		&:hover {
-			transform: scale(1.2);
+			transform: scale(1.2) rotate(180deg) translateY(4px);
 
 			svg path {
 				transition: stroke 0.3s ease-in-out;
@@ -134,4 +200,10 @@ import arrowImage from '../../img/arrow.svg'
 		}
 	}
 }
+
+// .popup__image-container {
+// 	position: absolute;
+// 	right: 0;
+// 	bottom: 0;
+// }
 </style>
