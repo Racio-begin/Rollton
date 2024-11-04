@@ -23,4 +23,34 @@
 		width: 850px;
 	}
 }
+
+@media (max-width: 1024px) {
+	.logo {
+		width: 750px;
+	}
+}
+
+@media (max-width: 820px) {
+	.logo {
+		width: 650px;
+	}
+}
+
+@media (max-width: 768px) {
+	.logo {
+		width: 550px;
+	}
+}
+
+@media (max-width: 480px) {
+	.logo {
+		width: 350px;
+	}
+}
+
+@media (max-width: 390px) {
+	.logo {
+		width: 320px;
+	}
+}
 </style>
