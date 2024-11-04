@@ -1,19 +1,34 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import HeaderLogo from './HeaderLogo.vue'
 import HeaderCollage from './HeaderCollage.vue'
+
+// Переменные состояния
+const imageSwitched = ref(false)
+const logoAnimated = ref(false)
+
+// Функция для переключения изображения при клике
+const toggleImage = () => {
+	imageSwitched.value = true
+	logoAnimated.value = true // Переключаем логотип
+	console.log('ПроверОчка', logoAnimated.value)
+}
 </script>
 
 <template>
 	<header class="header section-l">
 		<div class="header__container">
-			<div class="header__logo-container">
+			<div :class="['header__logo-container', { animated: logoAnimated }]">
 				<HeaderLogo />
 			</div>
 			<div class="header__sunrise-container">
 				<span class="header__sunrise"></span>
 			</div>
 			<div class="header__collage-container">
-				<HeaderCollage />
+				<HeaderCollage
+					@toggle-image="toggleImage"
+					:imageSwitched="imageSwitched"
+				/>
 			</div>
 		</div>
 	</header>
@@ -21,7 +36,6 @@ import HeaderCollage from './HeaderCollage.vue'
 
 <style lang="scss" scoped>
 .header {
-	// min-height: 1000px;
 	position: relative;
 	overflow: hidden;
 
@@ -39,6 +53,13 @@ import HeaderCollage from './HeaderCollage.vue'
 		z-index: 1;
 		position: absolute;
 		top: 0;
+		transition: all 0.5s ease;
+
+		&.animated {
+			left: 25%;
+			top: 4%;
+			transform: translate(-50%, -50%) scale(0.19);
+		}
 	}
 
 	&__collage-container {

@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 
 // Импортируем изображения как модули
 import originalImage from '@/img/collage.png'
 import hoverImage from '@/img/collage-open.png'
+
+// Эмитим события
+const emit = defineEmits(['toggle-image'])
 
 // Состояния для отслеживания состояния клика
 const imageSwitched = ref(false)
@@ -11,6 +14,7 @@ const imageSwitched = ref(false)
 // Функция для переключения изображения при клике
 const toggleImage = () => {
 	imageSwitched.value = true
+	emit('toggle-image') // Эмитим событие на родителя
 }
 </script>
 
